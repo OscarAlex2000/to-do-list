@@ -1,0 +1,345 @@
+/* Paleta de colores */
+:root {
+    --primary: #00adb5;
+    --secundary: #aad8d3;
+    --clear: #eeeeee;
+    --dark: #393e46;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark);
+}
+
+header {
+    margin: 1px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+}
+
+.alert #btnHi {
+    margin-top: 100px;
+    height: 8vh;
+    width: 4vw;
+    /* overflow-y: auto; */
+}
+
+.delete #btnde {
+    margin-top: 100px;
+    height: 8vh;
+    width: 4vw;
+    /* overflow-y: auto; */
+}
+
+.uno {
+    width: 60vw;
+    height: 80vh;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--clear);
+    border-radius: 15px;
+    box-shadow: 0px 5px 5px black;
+}
+
+header {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+header,
+footer {
+    height: 10vh;
+}
+
+main {
+    height: 60vh;
+    overflow-y: auto;
+}
+
+#btnCancel {
+    width: 500px;
+}
+
+.buttonadd {
+    position: absolute;
+    /* width: 30px;
+    height: 40px; */
+    font-size: 50px;
+    padding: 5px;
+    /* background-color: var(--primary); */
+    color: #00adb5;
+    right: 10px;
+    bottom: 1px;
+}
+
+.buttondelete {
+    position: absolute;
+    /* width: 30px;
+    height: 40px; */
+    font-size: 50px;
+    padding: 5px;
+    /* background-color: var(--primary); */
+    color: #c40e0e;
+    left: 10px;
+    bottom: 1px;
+}
+
+.lista>li>span {
+    position: fixed;
+    text-align: right;
+    left: 75vw;
+    font-size: 20px; 
+    color: #c40e0e;
+}
+
+.buttonchose {
+    position: absolute;
+    /* width: 30px;
+    height: 40px; */
+    font-size: 50px;
+    padding: 5px;
+    /* background-color: var(--primary); */
+    color: orangered;
+    left: 50px;
+    bottom: 1px;
+}
+
+.lista {
+    text-align: left;
+}
+
+.lista>li {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 2px solid var(--dark);
+}
+
+.lista>li:hover {
+    cursor: pointer;
+}
+
+.lista>li>span:hover {
+    cursor: pointer;
+}
+
+.uno #delete>span {
+    /* color: #00adb5; */
+    font-size: 30px;
+}
+
+.uno #delete:hover {
+    cursor: pointer;
+}
+
+.uno #agregar>span {
+    /* color: #00adb5; */
+    font-size: 30px;
+}
+
+.uno #agregar:hover {
+    cursor: pointer;
+}
+
+.uno #escoger>span {
+    /* color: #00adb5; */
+    font-size: 30px;
+}
+
+.uno #escoger:hover {
+    cursor: pointer;
+}
+
+
+/* .uno #agregar {
+    text-align: right;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 400px;
+} */
+
+footer {
+    width: 5%;
+    margin: 80px auto;
+    /* margin-bottom: 10px; */
+}
+
+.alert #btnHi {
+    position: relative;
+    margin: 0 auto;
+    top: 10px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: white;
+}
+
+.delete #btnde {
+    position: relative;
+    margin: 0 auto;
+    top: 10px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: white;
+}
+
+.alert #btnHi:hover {
+    box-shadow: 0px 5px 5px gray;
+    cursor: pointer;
+}
+
+.delete #btnde:hover {
+    box-shadow: 0px 5px 5px gray;
+    cursor: pointer;
+}
+
+.alert #btnHi>center>span {
+    color: var(--dark);
+    font-size: 30px;
+}
+
+.delete #btnde>center>span {
+    color: var(--dark);
+    font-size: 30px;
+}
+
+.alert {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.863);
+}
+
+.delete {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.863);
+}
+
+.oculto {
+    display: none;
+}
+
+.hecho {
+    text-decoration: line-through;
+}
+
+.alert .alertBox {
+    width: 28vw;
+    height: 24vh;
+    position: relative;
+    top: 15vh;
+    left: 35vw;
+    background-color: var(--clear);
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgb(204, 204, 204);
+}
+
+.delete .deleteBox {
+    width: 28vw;
+    height: 24vh;
+    position: relative;
+    top: 15vh;
+    left: 35vw;
+    background-color: var(--clear);
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgb(204, 204, 204);
+}
+
+header #title {
+    margin-top: 5px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    top: 5px;
+    right: 5px;
+    color: rgba(60, 172, 180, 0.849);
+    font: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Times, serif;
+}
+
+.alert #alertContent {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.delete #deleteContent {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.alert #alertClose {
+    text-align: right;
+    position: relative;
+    right: 5px;
+    top: 5px;
+    color: #c40e0e;
+    font-size: 20px;
+}
+
+.delete #deleteClose {
+    text-align: right;
+    position: relative;
+    right: 5px;
+    top: 5px;
+    color: #c40e0e;
+    font-size: 20px;
+}
+
+.alert #alertClose:hover {
+    cursor: pointer;
+}
+
+.delete #deleteClose:hover {
+    cursor: pointer;
+}
+
+[type="text"],
+.btn {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+[type="number"],
+.btn {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+}

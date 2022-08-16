@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>To do list</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+    <!-- Modal principal -->
+    <div id="principal" class="uno">
+        <header>
+            <h1>To do list</h1>
+        </header>
+        <main>
+            <section id="elementos">
+                <ul class="lista" id="lstLista">
+                    <!-- <li>Item</li>
+                    <li>Item</li>
+                    <li>Item</li> -->
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <div class="buttondelete" id="delete">
+                <span class="material-icons">remove_circle</span>
+            </div>
+            <div class="buttonadd" id="agregar">
+                <span class="material-icons">add_circle</span>
+            </div>
+            <!-- <div class="buttonchose" id="escoger">
+                <span class="material-icons">report</span> -->
+            </div>
+        </footer>
+    </div>
+
+    <div class="alert oculto" id="modTarea">
+        <div class="alertBox">
+            <div id="alertClose">
+                <span class="material-icons">close</span>
+            </div>
+            <div id="alertContent">
+                <input type="text" name="" id="txtTexto">
+            </div>
+            <div class="btnAceptar" id="btnHi">
+                <center>
+                    <span class="material-icons">note_add</span>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <div class="delete oculto" id="modDelete">
+        <div class="deleteBox">
+            <div id="deleteClose">
+                <span class="material-icons">close</span>
+            </div>
+            <div id="deleteContent">
+                <input type="number" name="" id="txtNumber">
+            </div>
+            <div class="btnDelete" id="btnde">
+                <center>
+                    <span class="material-icons">remove_circle_outline</span>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/scripts/script.js"></script>
+</body>
+</html>
