@@ -97,9 +97,9 @@ main {
 }
 
 .lista>li>span {
-    position: fixed;
+    position: absolute;
     text-align: right;
-    left: 75vw;
+    left: 55vw;
     font-size: 20px; 
     color: #c40e0e;
 }
