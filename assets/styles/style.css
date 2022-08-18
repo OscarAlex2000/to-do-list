@@ -96,13 +96,33 @@ main {
     bottom: 1px;
 }
 
-.lista>li>span {
+.spanText {
+    text-align: left;
+
+    padding: 10px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border-bottom: 2px solid var(--dark); */
+
+    cursor: pointer;
+}
+
+#spanDelete {
     position: absolute;
     text-align: right;
     left: 55vw;
     font-size: 20px; 
     color: #c40e0e;
 }
+
+/* .lista>li>span {
+    position: absolute;
+    text-align: right;
+    left: 55vw;
+    font-size: 20px; 
+    color: #c40e0e;
+} */
 
 .buttonchose {
     position: absolute;

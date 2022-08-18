@@ -48,9 +48,10 @@
     }
 
     // Funcion para mostrar en una ventana la tarea agregada
-    function ejecutaAlerta(item) {   
+    function ejecutaAlerta(item) {  
+        console.log(item) 
         var w = window.open('','','width=300,height=100');
-        w.document.write(`Se añadió la tarea '${item}' a la lista!`);
+        w.document.write(`Se añadió la tarea ${ item } a la lista!`);
         setTimeout(function() { w.close(); }, 2000);
     }
 
@@ -61,9 +62,14 @@
             let local_parse = JSON.parse(local);
             for ( let aux of local_parse ) {
                 var elemento = document.createElement("li");
-
+                elementoText = document.createElement("span");
+                elementoText.setAttribute("class", "spanText");
                 contenido = document.createTextNode(aux.homework);
-                elemento.appendChild(contenido);
+                elementoText.appendChild(contenido);
+                elemento.appendChild(elementoText);
+
+                // contenido = document.createTextNode(aux.homework);
+                // elemento.appendChild(contenido);
                 if ( aux.mark == false ) {
                     elemento.removeAttribute("class");
                     // saveLocalStorage(item, false);
@@ -76,6 +82,7 @@
                 
                 elementoIcon = document.createElement("span");
                 elementoIcon.setAttribute("class", "material-icons");
+                elementoIcon.setAttribute("id", "spanDelete");
                 contenidoIcon = document.createTextNode("close");
                 elementoIcon.appendChild(contenidoIcon);
                 elementoIcon.addEventListener("click", eliminarOne);
@@ -115,7 +122,7 @@
             let exist = false;
             for ( let aux of array_homework ) {
                 if ( aux.homework === obj_homework.homework ) {
-                    aux.mark =  obj_homework.mark;
+                    aux.mark = obj_homework.mark;
                     exist = true;
                 }
             }
@@ -138,14 +145,16 @@
             txtTexto.value = "";
         } else {
             var elemento = document.createElement("li");
-
+            elementoText = document.createElement("span");
+            elementoText.setAttribute("class", "spanText");
             contenido = document.createTextNode(item);
-            elemento.appendChild(contenido);
-            // item_global = item;
+            elementoText.appendChild(contenido);
+            elemento.appendChild(elementoText);
             elemento.addEventListener("click", marcar);
             
             elementoIcon = document.createElement("span");
             elementoIcon.setAttribute("class", "material-icons");
+            elementoIcon.setAttribute("id", "spanDelete");
             contenidoIcon = document.createTextNode("close");
             elementoIcon.appendChild(contenidoIcon);
             elementoIcon.addEventListener("click", eliminarOne);
@@ -160,26 +169,30 @@
         }
     }
 
+    // Funcion para eliminar uno
     function eliminarOne() {
-        // console.log(this.parentNode.remove());
-        let palabras = this.parentNode.innerHTML.split('<');
-        deleteLocalStorage(palabras[0]);
+        deleteLocalStorage(this.parentNode.querySelector(".spanText").innerHTML);
         this.parentNode.remove();
     }
 
     // Función para tachar tarea en caso de seleccionarla
     function marcar() {
-        const local = JSON.parse(localStorage.getItem("homeworks"));
-        let palabras = this.innerHTML.split('<');
-        let exist = local.filter((aux) => aux.homework === palabras[0]);
+        const local = JSON.parse(localStorage.getItem("homeworks")); 
+        const text = this.querySelector(".spanText").innerHTML;
+        console.log(text); 
+        let exist = local.filter((aux) => {
+            console.log(aux.homework)
+            return aux.homework === text
+        });
+        console.log(exist)
 
         if ( exist.length > 0 ) {
             if (this.getAttribute("class") == "hecho") {
                 this.removeAttribute("class");
-                saveLocalStorage(palabras[0], false);
+                saveLocalStorage(text, false);
             } else {
                 this.setAttribute("class", "hecho");
-                saveLocalStorage(palabras[0], true);
+                saveLocalStorage(text, true);
             }
         }
         // valor.parentNode.parentNode.removeChild(valor.parentNode);
